@@ -4,14 +4,14 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: xu-cheng/latex-action@v2
+      - uses: actions/checkout@v4
+      - uses: xu-cheng/latex-action@v3
         with:
           root_file: CV_yeonjukim.tex
-      - name: Move PDF to docs
+      - name: Move PDF
         run: mkdir -p docs && mv CV_yeonjukim.pdf docs/resume.pdf
-      - uses: actions/upload-pages-artifact@v2
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: docs
       - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
