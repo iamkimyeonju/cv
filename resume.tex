@@ -1,0 +1,61 @@
+\documentclass{article}
+\usepackage{calc}
+\usepackage[top=0.5in,bottom=0.63in,right=0.75in,left=0.75in]{geometry}
+\usepackage{hyperref}
+% \usepackage{times}
+\usepackage{enumitem}
+\usepackage{fontenc}
+\usepackage{tgbonum}
+\usepackage{subfiles}
+\usepackage{lipsum}  
+\usepackage{fontawesome5}
+\usepackage{setspace}
+\usepackage{graphicx}
+
+\setlist[enumerate]{topsep=0pt}
+\setlist[itemize]{noitemsep,topsep=0pt}
+
+\newlength{\remaining}
+\renewcommand{\section}[1]{%
+  \vspace{0.4em}\setlength{\remaining}{\textwidth-\widthof{\uppercase{#1}}}
+    \noindent\underline{\fontsize{9}{15}\bfseries\uppercase{#1}\hspace*{\remaining}} \\
+}
+\renewcommand{\subsection}[3]{
+    \noindent\textbf{#1} | \emph{#2} \hfill #3
+}
+\pagenumbering{gobble}
+
+\begin{document}
+% \centerline{\includegraphics{profile.jpg}}
+
+    \fontencoding{T1}
+    \fontfamily{phv}
+    \fontsize{11}{20}
+    \selectfont
+    \begin{center}
+        \begin{center}
+            \Huge\bfseries Yeonju Kim
+        \end{center}
+        \vspace{1em}
+            \begin{tabular}{c c c c}
+                \faOrcid \hspace{0.5em}
+                \href{https://orcid.org/0009-0000-6678-036X}{0009-0000-6678-036X}  & \faEnvelope[regular] \hspace{0.5em}  
+                \href{mailto:yeonju.kim@uconn.edu}{Email}
+                 & \faLinkedinIn \hspace{0.5em} 
+                \href{https://www.linkedin.com/in/yeonju-kim-31a862261/}{yeonjukim} 
+                 & \faGithub \hspace{0.5em} \href{https://github.com/iamkimyeonju/}{iamkimyeonju}
+        \end{tabular}
+    \end{center}    
+    \vspace{-0.2em}
+   % \subfile{subsections/researchinterest.tex}
+    \subfile{subsections/01_education.tex}
+    \subfile{subsections/02_tech.tex}
+    \subfile{subsections/03_academic_experience.tex}
+    %\subfile{subsections/08_awards.tex}
+    \subfile{subsections/04_conferences.tex}
+    \subfile{subsections/05_project.tex}    
+    \subfile{subsections/06_teaching.tex}
+    \subfile{subsections/07_workshop.tex}
+    \subfile{subsections/09_publications.tex}
+    %\subfile{subsections/coursework.tex}
+\end{document}
